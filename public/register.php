@@ -18,7 +18,7 @@ if (!preg_match("/\A[a-z\d]{8,100}+\z/i",$password)) {
     $err [] = 'パスワードは英数字8文字以上100文字以下にしてください';
 }
 $password_conf = filter_input(INPUT_POST, 'password_conf');
-if (!$passsword === $password_conf) {
+if ($password !== $password_conf) {
     $err [] = '確認用パスワードと異なっています';
 }
 

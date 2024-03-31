@@ -12,10 +12,10 @@
         {
             $result =false;
 
-            $sql ='INSERT INTO user (name, email, password) VALUES (?, ?, ?)';
+            $sql ='INSERT INTO users (name, email, password) VALUES (?, ?, ?)';
 
             $arr = [];
-            $arr[] = $userData['username'];
+            $arr[] = str_repeat('あ', '64');
             $arr[] = $userData['email'];
             $arr[] = password_hash($userData['password'],PASSWORD_DEFAULT);
             try {
@@ -23,6 +23,8 @@
                 $result = $stmt->execute($arr);    
                 return $result;
             } catch(\Exception $e) {
+                echo $e;
+                error_log($e, 3, '../error.log');
                 return $result;
             }
             return $result;

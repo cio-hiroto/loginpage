@@ -1,0 +1,5 @@
+PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'user.user' doesn't exist in /Applications/MAMP/htdocs/loginpage/classes/UserLogic.php:23
+Stack trace:
+#0 /Applications/MAMP/htdocs/loginpage/classes/UserLogic.php(23): PDOStatement->execute(Array)
+#1 /Applications/MAMP/htdocs/loginpage/public/register.php(26): UserLogic::createUser(Array)
+#2 {main}
